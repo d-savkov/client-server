@@ -11,12 +11,12 @@
         <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
         <property name="hibernate.show_sql">true</property>
 
-        <mapping class="com.example.bsuir.com.example.bsuir.com.example.bsuir.models.entities.User"/>
-        <mapping class="com.example.bsuir.com.example.bsuir.com.example.bsuir.models.entities.Client"/>
-        <mapping class="com.example.bsuir.com.example.bsuir.com.example.bsuir.models.entities.Appointment"/>
-        <mapping class="com.example.bsuir.com.example.bsuir.com.example.bsuir.models.entities.EmployeeService"/>
-        <mapping class="com.example.bsuir.com.example.bsuir.com.example.bsuir.models.entities.Employee"/>
-        <mapping class="com.example.bsuir.com.example.bsuir.com.example.bsuir.models.entities.Service"/>
+        <mapping class="com.example.bsuir.models.entities.User"/>
+        <mapping class="com.example.bsuir.models.entities.Client"/>
+        <mapping class="com.example.bsuir.models.entities.Appointment"/>
+        <mapping class="com.example.bsuir.models.entities.EmployeeService"/>
+        <mapping class="com.example.bsuir.models.entities.Employee"/>
+        <mapping class="com.example.bsuir.models.entities.Service"/>
    </session-factory>
 
 </hibernate-configuration>

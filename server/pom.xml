@@ -52,7 +52,7 @@
                             <transformers>
                                 <transformer
                                         implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                                    <mainClass>com.example.bsuir.com.example.bsuir.com.example.bsuir.Main</mainClass>
+                                    <mainClass>com.example.bsuir.Main</mainClass>
                                 </transformer>
                             </transformers>
                         </configuration>

@@ -3,6 +3,7 @@
 ## Start Server with Database
 
 ```shell
+docker-compose build
 docker-compose up
 ```
 
