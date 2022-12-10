@@ -36,7 +36,7 @@ public class ServicesController implements Initializable {
 
     public TableView<ServiceModel> serviceTable;
     public TableColumn<ServiceModel, String> name;
-    public TableColumn<ServiceModel, String> time;
+    public TableColumn<ServiceModel, String> country;
     public TableColumn<ServiceModel, String> price;
     public Button btnLogOut;
     public Button btnBack;
@@ -64,7 +64,7 @@ public class ServicesController implements Initializable {
             btnLogOut.setStyle(blackbutton);
             btnBack.setStyle(blackbutton);
         }
-        time.setCellValueFactory(new PropertyValueFactory<>("time"));
+        country.setCellValueFactory(new PropertyValueFactory<>("country"));
         name.setCellValueFactory(new PropertyValueFactory<>("name"));
         price.setCellValueFactory(new PropertyValueFactory<>("price"));
         GetService<Service> batchGetService = new GetService<>(Service.class);
@@ -75,7 +75,7 @@ public class ServicesController implements Initializable {
         if (services.size() != 0) {
             for (Service service : services) {
                 ServiceModel tableService = new ServiceModel(service.getId(), service.getName(),
-                                                             service.getTime(), service.getPrice());
+                                                             service.getCountry(), service.getPrice());
                 list.add(tableService);
             }
         }

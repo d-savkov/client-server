@@ -7,14 +7,14 @@ public class Service {
     private int id;
     private String name;
     private float price;
-    private int time;
+    private String country;
     private Set<EmployeeService> employees = new HashSet<>();
 
-    public Service(int id, String name, float price, int time, Set<EmployeeService> employees) {
+    public Service(int id, String name, float price, String country, Set<EmployeeService> employees) {
         this.id = id;
         this.name = name;
         this.price = price;
-        this.time = time;
+        this.country = country;
         this.employees = employees;
     }
 
@@ -47,11 +47,11 @@ public class Service {
         this.price = price;
     }
 
-    public int getTime() {
-        return time;
+    public String getCountry() {
+        return country;
     }
-    public void setTime(int time) {
-        this.time = time;
+    public void setCountry(String country) {
+        this.country = country;
     }
 
     public Set<EmployeeService> getEmployees() {

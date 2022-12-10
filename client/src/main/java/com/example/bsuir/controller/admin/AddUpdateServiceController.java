@@ -1,9 +1,9 @@
 package com.example.bsuir.controller.admin;
 
-import com.example.bsuir.model.enums.Requests;
 import com.example.bsuir.model.TCP.Request;
 import com.example.bsuir.model.TCP.Response;
 import com.example.bsuir.model.entities.Service;
+import com.example.bsuir.model.enums.Requests;
 import com.example.bsuir.util.ClientSocket;
 import com.example.bsuir.util.GetService;
 import com.google.gson.Gson;
@@ -23,7 +23,7 @@ import java.util.ResourceBundle;
 public class AddUpdateServiceController implements Initializable {
     public TextField nameField;
     public TextField priceField;
-    public TextField timeField;
+    public TextField countryField;
     public Button btnBack;
     public Button btnSave;
     public Button btnLogOut;
@@ -47,14 +47,6 @@ public class AddUpdateServiceController implements Initializable {
 
     public void onSave() {
         try {
-            Integer.parseInt(timeField.getText());
-        } catch (Exception e) {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setContentText("Введите корректное значение");
-            alert.showAndWait();
-            return;
-        }
-        try {
             Float.parseFloat(priceField.getText());
         } catch (Exception e) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -67,7 +59,7 @@ public class AddUpdateServiceController implements Initializable {
                 service = new Service();
             }
             service.setName(nameField.getText());
-            service.setTime(Integer.parseInt(timeField.getText()));
+            service.setCountry(countryField.getText());
             service.setPrice(Float.parseFloat(priceField.getText()));
             Request request;
             if (ClientSocket.getInstance().getServiceId() != -1) {
@@ -105,7 +97,7 @@ public class AddUpdateServiceController implements Initializable {
                                                      new Service(ClientSocket.getInstance().getServiceId()));
                 serviceId = service.getId();
                 nameField.setText(service.getName());
-                timeField.setText(String.valueOf(service.getTime()));
+                countryField.setText(String.valueOf(service.getCountry()));
                 priceField.setText(String.valueOf(service.getPrice()));
             }
         } catch (Exception e) {

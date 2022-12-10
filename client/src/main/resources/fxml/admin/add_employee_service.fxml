@@ -19,7 +19,7 @@
                    opacity="0.76" prefHeight="119.0" prefWidth="421.0">
             <columns>
                 <TableColumn fx:id="name" minWidth="100.0" prefWidth="170.0" text="Рейс"/>
-                <TableColumn fx:id="time" prefWidth="128.0" text="Страна"/>
+                <TableColumn fx:id="country" prefWidth="128.0" text="Страна"/>
                 <TableColumn fx:id="price" prefWidth="122.0" text="Цена"/>
             </columns>
         </TableView>

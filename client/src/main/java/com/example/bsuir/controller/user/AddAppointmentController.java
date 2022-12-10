@@ -61,7 +61,7 @@ public class AddAppointmentController implements Initializable {
     public TableColumn<EmployeeModel, String> surname;
     public TableView<ServiceModel> serviceTable;
     public TableColumn<ServiceModel, String> name;
-    public TableColumn<ServiceModel, String> time;
+    public TableColumn<ServiceModel, String> country;
     public TableColumn<ServiceModel, String> price;
     public TableView<ClientModel> clientsTable;
     public TableColumn<ClientModel, String> id;
@@ -121,7 +121,6 @@ public class AddAppointmentController implements Initializable {
         stage.setScene(newScene);
     }
 
-
     public void onSave() throws ParseException, IOException, InterruptedException {
         GetService<EmployeeService> batchGetService = new GetService<>(EmployeeService.class);
         Type listType = new TypeToken<ArrayList<EmployeeService>>() {
@@ -135,8 +134,7 @@ public class AddAppointmentController implements Initializable {
             SimpleDateFormat dateFormatter = new SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH);
             Time timeValue = new Time(
                     formatter.parse(timeChoice.getSelectionModel().getSelectedItem().toString()).getTime());
-            LocalTime localEndTime = timeValue.toLocalTime()
-                                              .plusHours(serviceTable.getSelectionModel().getSelectedItem().getTime());
+            LocalTime localEndTime = timeValue.toLocalTime().plusHours(2);
             Time endTime = new Time(localEndTime.getHour(), localEndTime.getMinute(), localEndTime.getSecond());
 
             EmployeeService employeeService = new EmployeeService();
@@ -219,7 +217,7 @@ public class AddAppointmentController implements Initializable {
                     text5.setStyle(blackfont);
                 }
                 timeChoice.setItems(tm);
-                time.setCellValueFactory(new PropertyValueFactory<>("time"));
+                country.setCellValueFactory(new PropertyValueFactory<>("country"));
                 name.setCellValueFactory(new PropertyValueFactory<>("name"));
                 price.setCellValueFactory(new PropertyValueFactory<>("price"));
                 GetService<Service> batchGetService = new GetService<>(Service.class);
@@ -231,7 +229,7 @@ public class AddAppointmentController implements Initializable {
                 if (services.size() != 0) {
                     for (Service service : services) {
                         ServiceModel tableService = new ServiceModel(service.getId(), service.getName(),
-                                                                     service.getTime(), service.getPrice());
+                                                                     service.getCountry(), service.getPrice());
                         list.add(tableService);
                     }
                 }

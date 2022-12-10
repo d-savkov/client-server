@@ -39,7 +39,7 @@ public class AddEmployeeServiceController implements Initializable {
 
     public TableView<ServiceModel> serviceTable;
     public TableColumn<ServiceModel, String> name;
-    public TableColumn<ServiceModel, String> time;
+    public TableColumn<ServiceModel, String> country;
     public TableColumn<ServiceModel, String> price;
 
     public Button btnLogOut;
@@ -99,7 +99,7 @@ public class AddEmployeeServiceController implements Initializable {
 
         employeeTable.setItems(list);
 
-        time.setCellValueFactory(new PropertyValueFactory<>("time"));
+        country.setCellValueFactory(new PropertyValueFactory<>("country"));
         name.setCellValueFactory(new PropertyValueFactory<>("name"));
         price.setCellValueFactory(new PropertyValueFactory<>("price"));
         GetService<Service> batchGetService2 = new GetService<>(Service.class);
@@ -111,7 +111,7 @@ public class AddEmployeeServiceController implements Initializable {
         if (services.size() != 0) {
             for (Service service : services) {
                 ServiceModel tableService = new ServiceModel(service.getId(), service.getName(),
-                                                             service.getTime(), service.getPrice());
+                                                             service.getCountry(), service.getPrice());
                 list2.add(tableService);
             }
         }

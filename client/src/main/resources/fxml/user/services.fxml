@@ -12,7 +12,7 @@
                    prefWidth="562.0">
             <columns>
                 <TableColumn fx:id="name" minWidth="100.0" prefWidth="200.0" text="Рейс"/>
-                <TableColumn fx:id="time" prefWidth="180.0" text="Страна"/>
+                <TableColumn fx:id="country" prefWidth="180.0" text="Страна"/>
                 <TableColumn fx:id="price" prefWidth="180.0" text="Цена"/>
             </columns>
         </TableView>

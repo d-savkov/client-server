@@ -46,7 +46,7 @@ public class StatisticController implements Initializable {
         int January = 0, February = 0, March = 0, April = 0, May = 0, June = 0, July = 0, August = 0, September = 0,
                 October = 0, November = 0, December = 0;
         for (Appointment appointment : appointments) {
-            if (appointment.getDate().getYear() == 120) {
+            if (appointment.getDate().getYear() == 122) {
                 switch (appointment.getDate().getMonth()) {
                     case 0:
                         January++;
@@ -88,7 +88,7 @@ public class StatisticController implements Initializable {
             }
         }
         XYChart.Series<String, Number> dataSeries1 = new XYChart.Series<String, Number>();
-        dataSeries1.setName("2020");
+        dataSeries1.setName("2022");
         dataSeries1.getData().add(new XYChart.Data<String, Number>("Январь", January));
         dataSeries1.getData().add(new XYChart.Data<String, Number>("Февраль", February));
         dataSeries1.getData().add(new XYChart.Data<String, Number>("Март", March));

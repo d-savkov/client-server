@@ -32,7 +32,7 @@ public class ManageServicesController implements Initializable {
     public TableView<ServiceModel> serviceTable;
     public TableColumn<ServiceModel, String> id;
     public TableColumn<ServiceModel, String> name;
-    public TableColumn<ServiceModel, String> time;
+    public TableColumn<ServiceModel, String> country;
     public TableColumn<ServiceModel, String> price;
     public Button btnAdd;
     public Button btnEdit;
@@ -101,7 +101,7 @@ public class ManageServicesController implements Initializable {
             btnAdd.setVisible(true);
             btnEdit.setVisible(true);
         }
-        time.setCellValueFactory(new PropertyValueFactory<>("time"));
+        country.setCellValueFactory(new PropertyValueFactory<>("country"));
         id.setCellValueFactory(new PropertyValueFactory<>("id"));
         name.setCellValueFactory(new PropertyValueFactory<>("name"));
         price.setCellValueFactory(new PropertyValueFactory<>("price"));
@@ -113,7 +113,7 @@ public class ManageServicesController implements Initializable {
         if (services.size() != 0)
             for (Service service : services) {
                 ServiceModel tableService = new ServiceModel(service.getId(), service.getName(),
-                        service.getTime(), service.getPrice());
+                                                             service.getCountry(), service.getPrice());
                 list.add(tableService);
             }
 
