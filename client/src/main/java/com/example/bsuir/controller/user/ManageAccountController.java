@@ -72,7 +72,7 @@ public class ManageAccountController implements Initializable {
 
     public void OnAdd() throws IOException {
         Stage stage = (Stage) btnAdd.getScene().getWindow();
-        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("/fxml/admin/add_update_client.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/fxml/admin/add_update_client.fxml"));
         Scene newScene = new Scene(root);
         stage.setScene(newScene);
     }
@@ -87,7 +87,7 @@ public class ManageAccountController implements Initializable {
             ClientSocket.getInstance().setClientId(clientModel.getId());
             Stage stage = (Stage) btnEdit.getScene().getWindow();
             Parent root = FXMLLoader.load(
-                    getClass().getClassLoader().getResource("/fxml/admin/add_update_client.fxml"));
+                    getClass().getResource("/fxml/admin/add_update_client.fxml"));
             Scene newScene = new Scene(root);
             stage.setScene(newScene);
         }
@@ -154,7 +154,7 @@ public class ManageAccountController implements Initializable {
     public void onExit() throws IOException {
         Stage stage = (Stage) btnExit.getScene().getWindow();
         ClientSocket.getInstance().setUser(null);
-        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("/fxml/login.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/fxml/login.fxml"));
         Scene newScene = new Scene(root);
         stage.setScene(newScene);
     }

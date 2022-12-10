@@ -45,7 +45,7 @@ public class UserAccountController implements Initializable {
     public void Exit_Pressed() throws IOException {
         Stage stage = (Stage) btnExit.getScene().getWindow();
         ClientSocket.getInstance().setUser(null);
-        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("/fxml/login.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/fxml/login.fxml"));
         Scene newScene = new Scene(root);
         stage.setScene(newScene);
     }

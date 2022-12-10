@@ -44,7 +44,7 @@ public class EmployeeController implements Initializable {
     public void onLogOut() throws IOException {
         Stage stage = (Stage) btnLogOut.getScene().getWindow();
         ClientSocket.getInstance().setUser(null);
-        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("/fxml/login.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/fxml/login.fxml"));
         Scene newScene = new Scene(root);
         stage.setScene(newScene);
     }

@@ -116,7 +116,7 @@ public class AddAppointmentController implements Initializable {
     public void onLogOut() throws IOException {
         Stage stage = (Stage) btnLogOut.getScene().getWindow();
         ClientSocket.getInstance().setUser(null);
-        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("/fxml/login.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/fxml/login.fxml"));
         Scene newScene = new Scene(root);
         stage.setScene(newScene);
     }
@@ -164,7 +164,7 @@ public class AddAppointmentController implements Initializable {
             alert.showAndWait();
             Thread.sleep(1500);
             Stage stage = (Stage) btnSave.getScene().getWindow();
-            Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("/fxml/user/account.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("/fxml/user/account.fxml"));
             Scene newScene = new Scene(root);
             stage.setScene(newScene);
         } catch (Exception e) {

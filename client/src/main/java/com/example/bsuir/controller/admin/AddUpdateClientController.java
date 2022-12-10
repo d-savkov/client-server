@@ -36,14 +36,14 @@ public class AddUpdateClientController implements Initializable {
     public void onLogOut() throws IOException {
         Stage stage = (Stage) btnLogOut.getScene().getWindow();
         ClientSocket.getInstance().setUser(null);
-        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("/fxml/login.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/fxml/login.fxml"));
         Scene newScene = new Scene(root);
         stage.setScene(newScene);
     }
 
     public void onBack() throws IOException {
         Stage stage = (Stage) btnBack.getScene().getWindow();
-        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("/fxml/user/manage_account.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/fxml/user/manage_account.fxml"));
         Scene newScene = new Scene(root);
         stage.setScene(newScene);
     }

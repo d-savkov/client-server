@@ -73,7 +73,7 @@ public class AddEmployeeServiceController implements Initializable {
         alert.showAndWait();
         Thread.sleep(1500);
         Stage stage = (Stage) btnSave.getScene().getWindow();
-        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("/fxml/admin/account.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/fxml/admin/account.fxml"));
         Scene newScene = new Scene(root);
         stage.setScene(newScene);
     }
@@ -129,7 +129,7 @@ public class AddEmployeeServiceController implements Initializable {
     public void onLogOut() throws IOException {
         Stage stage = (Stage) btnLogOut.getScene().getWindow();
         ClientSocket.getInstance().setUser(null);
-        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("/fxml/login.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/fxml/login.fxml"));
         Scene newScene = new Scene(root);
         stage.setScene(newScene);
     }
