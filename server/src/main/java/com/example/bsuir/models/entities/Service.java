@@ -36,8 +36,8 @@ public class Service {
     @Column(name = "price")
     private float price;
 
-    @Column(name = "time", length = 45)
-    private int time;
+    @Column(name = "country", length = 45)
+    private String country;
 
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "service", cascade = {CascadeType.ALL})
     private transient Set<EmployeeService> employees = new HashSet<>();

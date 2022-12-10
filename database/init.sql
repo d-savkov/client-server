@@ -47,7 +47,7 @@ create table if not exists service
 			primary key,
 	name varchar,
 	price double precision,
-	time integer
+	country varchar
 );
 
 create unique index if not exists services_id_uindex
